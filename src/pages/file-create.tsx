@@ -95,12 +95,6 @@ export default function FileCreate() {
             <button className={"btn container-fluid" + getColor("btn-outline-dark")} type="submit">Save</button>
             <button className="btn btn-outline-secondary container-fluid ms-3" type="reset">Cancel</button>
           </div>
-
-          {status.error &&
-            <div>
-              <p className="form-control text-center text-bg-danger p-2">{status.error}</p>
-            </div>}
-
         </div>
 
         <Error error={status.error}/>

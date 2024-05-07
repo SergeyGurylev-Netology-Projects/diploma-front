@@ -2,6 +2,24 @@ import { useLocation } from 'react-router-dom';
 import { MyCloudUserSettings } from './model';
 import { LOCAL_STORAGE_KEY_USER_SETTINSG } from './index';
 
+const fileIcons = {
+  'bi-file-play': ['avi', 'mp4', 'mpg'],
+  'bi-file-music': ['mp3', 'wav'],
+  'bi-file-image': ['bmp', 'dwg', 'gif', 'jpg', 'jpeg', 'png', 'psd', 'tiff'],
+  'bi-file-binary': ['css', 'html', 'js', 'xml', 'exe'],
+  'bi-file-word': ['doc', 'docx', 'dot'],
+  'bi-file-excel': ['xls', 'xlsx', 'xlt'],
+  'bi-file-pdf': ['pdf'],
+  'bi-file-zip': ['rar', 'zip', '7zip'],
+  'bi-file-text': ['txt'],
+}
+
+export const getFileIcon = (extension: string) => {
+  // @ts-ignore
+  const icon = Object.keys(fileIcons).find((key: string) => fileIcons[key].includes(extension.toLowerCase()));
+  return icon || 'bi-file-minus'
+}
+
 export const convertToDateTimeLocalString = (timestamp: string | undefined): string => {
   if (!timestamp)
     return '-'

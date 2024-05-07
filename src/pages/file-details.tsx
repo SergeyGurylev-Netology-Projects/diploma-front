@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { convertToDateTimeLocalString, getColor } from '../app/index';
+import { convertToDateTimeLocalString, getColor, getFileIcon } from '../app/index';
 import { initialState, fileActions, selectFile, fileGet, filePatch, fileDestory } from '../slices/file-slice';
 import { filesListActions } from '../slices/file-list-slice';
 import { usersListActions } from '../slices/user-list-slice';
@@ -106,7 +106,10 @@ export default function FileDetails() {
 
       <div className="d-flex justify-content-center align-items-center">
         <form onSubmit={submitHandle} onReset={resetHandle}>
-          <h2 className="text-center mt-3 mb-3">File details</h2>
+          <div className="d-flex justify-content-center align-items-center mb-1">
+            <i className={"bi " + getFileIcon(file.extension)} style={{fontSize: "2.4rem"}}></i>
+            <h2 className="d-flex align-items-center ms-3">File details</h2>
+          </div>
 
           {status.loaded &&
             <div className="justify-content-center align-items-center">

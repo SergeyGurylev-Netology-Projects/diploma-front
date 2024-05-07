@@ -1,8 +1,10 @@
-import { convertToDateTimeLocalString, type MyCloudFile } from '../app/index';
+import { convertToDateTimeLocalString, getFileIcon, type MyCloudFile } from '../app/index';
 import { useNavigate } from "react-router-dom";
 import Loading from '../components/loading.tsx';
 import Error from "./error.tsx";
-const icons  = './src/img/icons/';
+
+// const icons  = './src/img/icons/';
+// const icons  = '/static/img/icons/';
 
 export default function FileList({...props}) {
   const navigate = useNavigate();
@@ -33,7 +35,8 @@ export default function FileList({...props}) {
             <tr key={item.id} className="users-list-row" onClick={() => rowClickHandle(item.id)}>
               <th scope="row">{index+1}</th>
               <td className="w-5">
-                <img className="file-icon" src={icons + item.extension + '.png'}/>
+                <i className={"bi " + getFileIcon(item.extension)} style={{fontSize: "1.2rem"}}></i>
+                {/*<img className="file-icon" src={icons + item.extension + '.png'}/>*/}
               </td>
               <td className="w-25">{item.title}</td>
               <td className="w-30">{item.description}</td>
