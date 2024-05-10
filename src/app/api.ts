@@ -1,8 +1,7 @@
 import { Login, MyCloudCurrentUser, MyCloudUser, MyCloudFile, MyCloudUserSettings } from './model'
 import { LOCAL_STORAGE_KEY_CURRENT_USER } from "./index.ts";
 
-// const url = import.meta.env.VITE_APP_URL || 'http://localhost:8000';
-const url = '';
+const url = import.meta.env.VITE_APP_URL;
 const path = `${url}/api`;
 
 const getToken = () => {
@@ -248,7 +247,7 @@ export function filePost( params: { detail: MyCloudFile, file: File, user_id: nu
     const fetchData = async () => {
       try {
         const response = await fetch(url, options)
-        // if (!response.ok) throw new Error(response.status + ' | ' + response.statusText);
+        if (!response.ok) throw new Error(response.status + ' | ' + response.statusText);
         const data = await response.json();
         // if (data.error?.handle) throw new Error(data.error.handle[0]);
         if (data.error) cause_exception(data.error);
