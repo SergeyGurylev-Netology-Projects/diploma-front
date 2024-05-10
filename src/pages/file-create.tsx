@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
-import { getColor } from '../app/index';
+import {getColor, getFileIcon} from '../app/index';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { selectLogonStatus } from "../slices/logon-slice.ts";
 import { initialState, fileActions, selectFile, filePost } from '../slices/file-slice';
@@ -68,7 +68,7 @@ export default function FileCreate() {
   return (
     <div className="d-flex justify-content-center align-items-center">
       <form onSubmit={submitHandle} onReset={resetHandle}>
-        <h2 className="text-center mt-4 mb-4">New File</h2>
+        <h2 className={"text-center mt-4 mb-4 " + getFileIcon(fileState.extension)}>&nbsp;&nbsp;New File</h2>
 
         <div className="justify-content-center align-items-center">
 
@@ -87,7 +87,7 @@ export default function FileCreate() {
           </div>
 
           <div className="mb-3">
-            <label className="form-label ">Size</label>
+            <label className="form-label ">Size, KB</label>
             <input type="number" className="form-control" name="size" disabled value={fileState.size} />
           </div>
 

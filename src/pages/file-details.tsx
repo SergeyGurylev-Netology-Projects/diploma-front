@@ -106,10 +106,7 @@ export default function FileDetails() {
 
       <div className="d-flex justify-content-center align-items-center">
         <form onSubmit={submitHandle} onReset={resetHandle}>
-          <div className="d-flex justify-content-center align-items-center mb-1">
-            <i className={"bi " + getFileIcon(file.extension)} style={{fontSize: "2.4rem"}}></i>
-            <h2 className="d-flex align-items-center ms-3">File details</h2>
-          </div>
+          <h2 className={"text-center mt-4 mb-4 " + getFileIcon(file.extension)}>&nbsp;&nbsp;File details</h2>
 
           {status.loaded &&
             <div className="justify-content-center align-items-center">

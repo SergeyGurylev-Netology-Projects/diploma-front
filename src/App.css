@@ -13,14 +13,6 @@ a, a:hover, a:visited, a:active {
   width: 400px;
 }
 
-.loadingImage {
-  width: 50px;
-}
-
-.header-hover:hover {
-  cursor: pointer;
-}
-
 .users-list-row:hover {
   cursor: pointer;
 }

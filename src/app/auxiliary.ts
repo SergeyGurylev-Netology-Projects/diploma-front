@@ -3,10 +3,11 @@ import { MyCloudUserSettings } from './model';
 import { LOCAL_STORAGE_KEY_USER_SETTINSG } from './index';
 
 const fileIcons = {
-  'bi-file-play': ['avi', 'mp4', 'mpg'],
+  'bi-file-play': ['avi', 'mp4', 'mpg', 'mkv'],
   'bi-file-music': ['mp3', 'wav'],
   'bi-file-image': ['bmp', 'dwg', 'gif', 'jpg', 'jpeg', 'png', 'psd', 'tiff'],
-  'bi-file-binary': ['css', 'html', 'js', 'xml', 'exe'],
+  'bi-file-code': ['css', 'html', 'js', 'xml', 'exe'],
+  'bi-file-binary': ['dat'],
   'bi-file-word': ['doc', 'docx', 'dot'],
   'bi-file-excel': ['xls', 'xlsx', 'xlt'],
   'bi-file-pdf': ['pdf'],
@@ -17,7 +18,7 @@ const fileIcons = {
 export const getFileIcon = (extension: string) => {
   // @ts-ignore
   const icon = Object.keys(fileIcons).find((key: string) => fileIcons[key].includes(extension.toLowerCase()));
-  return icon || 'bi-file-minus'
+  return icon || 'bi-file'
 }
 
 export const convertToDateTimeLocalString = (timestamp: string | undefined): string => {

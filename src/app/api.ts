@@ -1,7 +1,8 @@
 import { Login, MyCloudCurrentUser, MyCloudUser, MyCloudFile, MyCloudUserSettings } from './model'
 import { LOCAL_STORAGE_KEY_CURRENT_USER } from "./index.ts";
 
-const url = import.meta.env.VITE_APP_URL || 'http://localhost:8000';
+// const url = import.meta.env.VITE_APP_URL || 'http://localhost:8000';
+const url = '';
 const path = `${url}/api`;
 
 const getToken = () => {
